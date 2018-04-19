@@ -11,7 +11,7 @@ class NewUser extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/all`)
+        axios.get(`https://back-dashboardisep.projects.webjcloud.fr/api/all`)
             .then(res => {
                 const users = res.data;
                 this.setState( { users:users,email:'',name:''});
@@ -26,7 +26,7 @@ class NewUser extends Component {
             name: this.state.name,
             email: this.state.email
         };
-        axios.post(`http://localhost:8080/api/add`,  newUser )
+        axios.post(`https://back-dashboardisep.projects.webjcloud.fr/api/add`,  newUser )
             .then(res => {
                 console.log(res.data);
                 newUser.id = res.data.id;
