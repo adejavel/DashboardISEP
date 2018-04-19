@@ -1,8 +1,10 @@
 version: '3'
+volumes:
+ dbdata:
 services:
  
-  mysql:
-   container_name: mysql-database
+  mysqldb:
+   container_name: mysqldb
    image: mysql/mysql-server:5.7
    environment:
     MYSQL_DATABASE: dashboardisep
@@ -12,7 +14,7 @@ services:
    restart: always
   
   app:
-    restart: always
+    #restart: always
     build: ./back
     working_dir: /back
     volumes:
@@ -21,7 +23,7 @@ services:
     expose:
       - "8080"
     ports:
-    - "8080:8080"
+    - "8084:8080"
     command: mvn clean spring-boot:run
     depends_on:
-      - mysql
+      - mysqldb
