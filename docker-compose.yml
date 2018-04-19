@@ -13,7 +13,7 @@ services:
    - "3306:3306"
    restart: always
   
-  app:
+  back:
     #restart: always
     build: ./back
     working_dir: /back
@@ -27,3 +27,10 @@ services:
     command: mvn clean spring-boot:run
     depends_on:
       - mysqldb
+  front:
+    container_name: dash-front
+    build: ./front
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
