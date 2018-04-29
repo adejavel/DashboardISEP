@@ -37,3 +37,21 @@
 14:18:50||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst|INST_NEW|Up|1523369874|e2cd353b66c6901f925e07186a8c28c8|67|00084612ocjcy0wvp681|4||201|0|0|||INST_NONE|
 14:18:51||back/target/test-classes/com/rhododendron/dashboardisep/DashboardisepApplicationTests.class|INST_NEW|Up|1523369874|1b3f20a7637a5bcaba157c62e6243db1|677|00084614ocjcy0wvp681|4||201|0|0|||INST_NONE|
 #=#=#=# Syncrun finished 2018-04-10T16:18:09 (last step: 4910 msec, total: 8805 msec)
+#=#=#=# Syncrun started 2018-04-29T22:00:46
+#=#=#=#=# Propagation starts 2018-04-29T22:00:51 (last step: 5209 msec, total: 5209 msec)
+#=#=#=# Syncrun finished 2018-04-29T22:00:52 (last step: 753 msec, total: 5963 msec)
+#=#=#=# Syncrun started 2018-04-29T22:00:56
+#=#=#=#=# Propagation starts 2018-04-29T22:01:01 (last step: 4881 msec, total: 4881 msec)
+20:02:01||README.md|INST_NEW|Up|1525032050|5c9ce7dbecb22dfe86e2c15eababe453|2446|00108605ocjcy0wvp681|4||201|0|0|||INST_NONE|
+20:02:01||front/Dockerfile|INST_NEW|Up|1525032050|a286ed9f54c9a819bafab139f6c47640|358|00108604ocjcy0wvp681|4||201|0|0|||INST_NONE|
+20:02:01||back/src/main/resources/application.properties|INST_SYNC|Up|1525032050|c7740b57e36dff62d7702e2c837628b8|188|00053759ocjcy0wvp681|4||204|169|1523369756|588548edf7d08d63c6ea0d6be3af5e84|00053759ocjcy0wvp681|INST_NONE|
+20:02:01||front/package.json|INST_SYNC|Up|1525032050|c24f8ea3308b3c7f1302bc594229fef3|364|00056264ocjcy0wvp681|4||204|341|1522758309|a3aaca284d52d27386328b463e3aa067|00056264ocjcy0wvp681|INST_NONE|
+20:02:01||front/src/components/newUser.js|INST_SYNC|Up|1525032050|6b58a6eff26bc8c6616c850dd412c3f5|2050|00082509ocjcy0wvp681|4||204|1996|1522762733|363da10ecb7b6962dd4ab9bcb4f71e63|00082509ocjcy0wvp681|INST_NONE|
+#=#=#=# Syncrun finished 2018-04-29T22:01:03 (last step: 1417 msec, total: 6298 msec)
+#=#=#=# Syncrun started 2018-04-29T22:01:06
+#=#=#=#=# Propagation starts 2018-04-29T22:01:10 (last step: 3337 msec, total: 3337 msec)
+#=#=#=# Syncrun finished 2018-04-29T22:01:10 (last step: 620 msec, total: 3958 msec)
+#=#=#=# Syncrun started 2018-04-29T22:01:14
+#=#=#=#=# Propagation starts 2018-04-29T22:01:16 (last step: 2409 msec, total: 2409 msec)
+20:02:15||docker-compose.yml|INST_SYNC|Up|1525032069|43df9273144d9ffef6e095481e258e73|634|00053736ocjcy0wvp681|4||204|503|1523379685|8f19ed92a4cc3e22530c27884b4a0bfc|00053736ocjcy0wvp681|INST_NONE|
+#=#=#=# Syncrun finished 2018-04-29T22:01:17 (last step: 584 msec, total: 2993 msec)
