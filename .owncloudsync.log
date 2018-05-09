@@ -1,0 +1,240 @@
+# timestamp | duration | file | instruction | dir | modtime | etag | size | fileId | status | errorString | http result code | other size | other modtime | other etag | other fileId | other instruction
+#=#=#=# Syncrun started 2018-05-09T11:23:44
+#=#=#=#=# Propagation starts 2018-05-09T11:24:19 (last step: 34697 msec, total: 34697 msec)
+||back/src/main/java/com/rhododendron/dashboardisep/Entities|INST_NEW|Down|1525280605|5ae9ef5d53c21|0|00109228ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Entities à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories|INST_NEW|Down|1525250192|5ae97890d88b1|0|00109232ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Repositories à cause de la casse|0|0|0|||INST_NONE|
+09:25:27||back/src/main/java/com/rhododendron/dashboardisep/entities|INST_NEW|Up|1525857066||128|00115964ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:27||back/src/main/java/com/rhododendron/dashboardisep/controlers|INST_NEW|Up|1525857815||128|00115963ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:27||back/src/main/java/com/rhododendron/dashboardisep/repositories|INST_NEW|Up|1525855824||128|00115965ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:27||back/src/main/java/com/rhododendron/dashboardisep/UserController.java|INST_REMOVE|Up|1525855767|6de989470566a2c96c9dad99d695b41a|1063|00115958ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:27||back/src/main/java/com/rhododendron/dashboardisep/UserRepository.java|INST_REMOVE|Up|1525855767|44e1938de5857283a6751ddd544fa6ea|172|00115960ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:27||back/src/main/java/com/rhododendron/dashboardisep/User.java|INST_REMOVE|Up|1525855767|31008eee96396f33be9d39418d5dd29f|729|00115956ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:28||back/src/main/java/com/rhododendron/dashboardisep/entities/Student.java|INST_NEW|Up|1525856917|d7d7b3602aac5440b30a7d5bc9b342fc|1405|00115966ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:28||back/src/main/java/com/rhododendron/dashboardisep/controlers/StudentController.java|INST_NEW|Up|1525857827|c840cbb52fc1d1810ea431ae9e57cba9|2001|00115967ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:28||back/src/main/java/com/rhododendron/dashboardisep/controlers/GroupControler.java|INST_NEW|Up|1525855824|bb48a6c2074c2df41e4b34bbfaaa2f24|1902|00115968ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:28||back/src/main/java/com/rhododendron/dashboardisep/entities/StudentGroup.java|INST_NEW|Up|1525857066|a154445bc1ad1c2b27a4d6efcff7d525|1112|00115969ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:28||back/src/main/java/com/rhododendron/dashboardisep/repositories/StudentRepository.java|INST_NEW|Up|1525855824|a75e2dfafce504b1de591a34da4240af|178|00115970ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:28||back/src/main/java/com/rhododendron/dashboardisep/repositories/GroupRepository.java|INST_NEW|Up|1525855824|2bbf287e3c5119ea87772ff102068b05|180|00115971ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/Student.class|INST_NEW|Up|1525857763|e95ae516ced1542fe45610c5fb09ddf5|2584|00115972ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/StudentController.class|INST_NEW|Up|1525857763|80f60b9cb706f5ac8948c895cf81e615|3851|00115973ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/StudentGroup.class|INST_NEW|Up|1525857763|9b97ce54f6e3dca0ec5cb63c0c80129d|2372|00115974ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/StudentRepository.class|INST_NEW|Up|1525857763|8617dd52face49fe5c10d9fe868eeb4d|355|00115975ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/Group.class|INST_REMOVE|Up|1525280561|126c814d5512ea1675daf26cbcd74bca|1259|00109656ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/User.class|INST_REMOVE|Up|1525280561|a0f5becfb99c83bd2a2b21406d8dd00a|2058|00109662ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/UserController.class|INST_REMOVE|Up|1525280561|f0060f3b4a28441311acf06fdf7eca4c|2301|00109661ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/UserCreation.class|INST_REMOVE|Up|1525280561|c603f8d86086540111131b58e746a2d1|2519|00109663ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:30||front/node_modules/acorn-dynamic-import/lib/index.js|INST_NEW|Down|1488318954|caae29bd9591b10566c109d5d3e4c01e|655|00056315ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/acorn-dynamic-import/node_modules/acorn/dist/acorn_loose.es.js|INST_NEW|Down|1495621714|a465b5e2ceef58602f23c91344c1b74d|45227|00056328ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/acorn-jsx/node_modules/acorn/AUTHORS|INST_NEW|Down|1469481806|d49616b7da1f046b9ebfa4e06c49833b|851|00056423ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/anymatch/node_modules/braces/LICENSE|INST_NEW|Down|1463843013|532413998819a1d42872eb0639a78c1b|1088|00056672ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/ajv/lib/dotjs/_limit.js|INST_NEW|Down|1513456483|39dc26cbd1cc1f896e293ac752da8d4f|6842|00056529ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/array-union/license|INST_NEW|Down|1396798991|62af19f36fe31c3e9980bea1873fcdc1|1119|00056951ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:29||back/target/classes/com/rhododendron/dashboardisep/UserRepository.class|INST_REMOVE|Up|1525280561|feb2f2af2954c64efba52c9c07e89b0a|346|00109664ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:25:30||front/node_modules/asn1/tst/ber/writer.test.js|INST_NEW|Down|1401981220|45aa480e0cbc05a33de1c7f31b46a049|9455|00056997ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/babel-plugin-jest-hoist/README.md|INST_NEW|Down|1467683283|22ef864e14ad808a9576016047acf412|627|00057666ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/compare-versions/test/compare.js|INST_NEW|Down|1506397395|5b403c60867bd779de40da48462d91c2|3659|00063888ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/chalk/node_modules/ansi-styles/index.js|INST_NEW|Down|1459197140|8d15af8b575b35ada1552ca20c764dd6|1254|00063415ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/coa/src/cmd.coffee|INST_NEW|Down|1499262386|46c2508706bc7ea8b36449cab9ab662a|13826|00063753ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/babel-traverse/lib/path/inference/inferers.js|INST_NEW|Down|1502898494|eb0b6645907797e7ded1aebb165ed9b6|5555|00061317ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:30||front/node_modules/compressible/HISTORY.md|INST_NEW|Down|1518928869|66fa861945eddbb4e057cd7478477b26|1421|00063884ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:31||front/node_modules/crypto-browserify/README.md|INST_NEW|Down|1491835565|084671ddd5e02e84e36b580b7793cfa5|1641|00064982ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:31||front/node_modules/csso/lib/cli.js|INST_NEW|Down|1489181774|77486427c7a91ea1fc1ab932e64c0452|11727|00065329ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:31||front/node_modules/css-loader/node_modules/has-flag/license|INST_NEW|Down|1396798991|b60c0b4f4f3c23d9619b0b4ab5036c4a|1119|00065047ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:31||front/node_modules/currently-unhandled/core.js|INST_NEW|Down|1464842694|ff187c98e0bb3402bf4df505f5224c2f|747|00065844ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:31||front/node_modules/cssnano/node_modules/autoprefixer/lib/at-rule.js|INST_NEW|Down|1489231640|5d21c320d1ba1fedd4690e9496c43ac1|1479|00065190ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:31||front/node_modules/csso/lib/compressor/restructure/prepare/processSelector.js|INST_NEW|Down|1489181775|519aad0c6434997bcfd8ef11325db27f|2921|00065376ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/dom-converter/scripts/js/test/saneObjectToDom.js|INST_NEW|Down|1390560004|06eb9c5a0747126f3fc81200b3ff08f2|1559|00066182ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/ecc-jsbn/lib/LICENSE-jsbn|INST_NEW|Down|1394075812|d9f0f4373a8009d729321ea844efaf6f|1544|00066299ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/number/max-safe-integer/index.js|INST_NEW|Down|1499688287|57b70da0c3db390380ff52e59a0a71ed|53|00066791ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/number/#/pad.js|INST_NEW|Down|1499688287|031680d67fdc044c7abbdbb9085aa1d1|400|00066764ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/string/from-code-point/index.js|INST_NEW|Down|1499688287|c452223a97188e78699ad66f50ebb9b2|108|00066981ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/reg-exp/#/match/is-implemented.js|INST_NEW|Down|1499688287|bc66791ada077d62a0d5f09119585ac8|168|00066895ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/test/math/_decimal-adjust.js|INST_NEW|Down|1520591106|65fa8e9156b8adfc79021002aa62ec9f|167|00067159ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/test/math/sinh/index.js|INST_NEW|Down|1499688287|f141a52c53bd032b8ef60f8a111ec42b|51|00067233ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/es5-ext/test/number/is-safe-integer/implement.js|INST_NEW|Down|1499688287|3c01d638b730514e9e99db0fd7b03218|157|00067271ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/eslint-plugin-flowtype/dist/utilities/fuzzyStringMatch.js|INST_NEW|Down|1507318174|8eb94d6e372daadff080bf510be85504|1590|00068267ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/eslint-plugin-react/CHANGELOG.md|INST_NEW|Down|1506276938|7b453f207f4ae8b4ae750e9be358b599|96018|00068565ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/eslint/lib/formatters/checkstyle.js|INST_NEW|Down|1509137191|e9b66f2c36c25b9326b8bc50d3c87985|1697|00067762ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/expand-brackets/node_modules/kind-of/LICENSE|INST_NEW|Down|1507878123|0ba4cbf3ccce236e328c58d028fb0d98|1088|00069033ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/extract-text-webpack-plugin/schema/plugin.json|INST_NEW|Down|1508510828|6217becea69ee0b8f4eae197feb2f38c|968|00069163ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/fsevents/node_modules/json-schema/draft-01/hyper-schema|INST_NEW|Down|1289526444|78fd3c214278ede19c6ee30fd04932d0|1198|00070342ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/fsevents/node_modules/ajv/scripts/bundle.js|INST_NEW|Down|1491601175|466378d715c53f857ebe75d06384b8a1|1638|00069809ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/fsevents/node_modules/isarray/README.md|INST_NEW|Down|1449741845|3d3bafe482ed4588819fa99196a31ed2|1890|00070303ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:32||front/node_modules/fsevents/node_modules/mkdirp/test/chmod.js|INST_NEW|Down|1431568795|a0d10eadff332825cae6e29ce1881c1f|1137|00070474ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/fsevents/node_modules/punycode/LICENSE-MIT.txt|INST_NEW|Down|1408532732|53bd4c070984ad9ed0acba9ca40718f1|1077|00070605ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/fsevents/node_modules/sntp/Makefile|INST_NEW|Down|1409946595|40e1c25aef73fa6ea2a64790c1e5fc9f|206|00070748ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/handle-thing/package.json|INST_NEW|Down|1522758267|a7be74c74b1c6b2bec5822caeca51e21|2499|00071095ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/fsevents/node_modules/tweetnacl/AUTHORS.md|INST_NEW|Down|1481623354|52c0221b2d8ee16cba85fa458e0c7b41|875|00070898ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/hpack.js/lib/hpack/decoder.js|INST_NEW|Down|1458836070|40e31d0d005047f846d8d38b18c54c33|3857|00071490ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/handlebars/node_modules/yargs/lib/parser.js|INST_NEW|Down|1432873394|15176fe4a16ab7ad730787144636577d|12413|00071323ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/htmlparser2/node_modules/readable-stream/LICENSE|INST_NEW|Down|1422450453|b701a0b4f0a45479988261220e0ceb60|1096|00071592ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/html-webpack-plugin/node_modules/loader-utils/LICENSE|INST_NEW|Down|1486566276|671cbe1aef6d2c9f4c5fd72ec3946a9e|1084|00071544ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/iconv-lite/encodings/tables/cp950.json|INST_NEW|Down|1401283009|9412c5f5888b3d52bba1a2904da7aeeb|42356|00071808ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/import-lazy/index.js|INST_NEW|Down|1484646095|45066ad1e2c4b1c08a29654c68cab18a|976|00071843ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/is-arrayish/LICENSE|INST_NEW|Down|1440522010|03354f0c839932e471e39030f89ca917|1077|00071992ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/isarray/Makefile|INST_NEW|Down|1449741845|27a0bc7e0f0dc6156ec1d3f9a63334a5|55|00072232ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/inquirer/lib/prompts/checkbox.js|INST_NEW|Down|1488549843|83716ef6a697df5b544f49e9efc4c461|5927|00071904ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/isexe/README.md|INST_NEW|Down|1490230327|ee085a243d9fa33af67d23f0da34315c|1395|00072238ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/istanbul-api/node_modules/debug/CHANGELOG.md|INST_NEW|Down|1506453203|2020e8fb96500398b2b02420faa35ed1|12950|00072295ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:33||front/node_modules/istanbul-lib-source-maps/node_modules/source-map/dist/source-map.debug.js|INST_NEW|Down|1503322374|1f386b95cb13c267743129bc9a8b8e9b|260210|00072429ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/jest-haste-map/node_modules/expand-brackets/index.js|INST_NEW|Down|1459553635|487ddac9d433069e8d33d86fe99ae91c|3255|00072684ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/jsbn/README.md|INST_NEW|Down|1486885358|a6c5edb6e0214a02acd28bd6a1600fc5|1623|00072976ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/kind-of/index.js|INST_NEW|Down|1512153024|7174ccd2b65d1abdd3c03464c53f7d11|3540|00073603ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/jsdom/lib/jsdom/living/events/ErrorEvent-impl.js|INST_NEW|Down|1464500473|c97e961dbbbe9aa74cdeb743e1e4e887|174|00073053ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/lodash/LICENSE|INST_NEW|Down|1517704208|6b0b865e1b9a49c0255d615aa4eb20fb|1950|00073725ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/merge/LICENSE|INST_NEW|Down|1409995220|09e10f08f604bb2b4ac0e24966583b6a|1116|00074981ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/minimatch/README.md|INST_NEW|Down|1456006221|07e2428de4591279b6a30a091b401ece|6336|00075076ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/object-keys/CHANGELOG.md|INST_NEW|Down|1467738850|6ef19f3a24c0effc45e5283ce881168e|6992|00075655ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/node-notifier/vendor/notifu/notifu64.exe|INST_NEW|Down|1515866502|5e38c9bd86ff29f3197ef3801656635c|323584|00075520ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/object-visit/LICENSE|INST_NEW|Down|1435530195|495b876170f29bdddf726bc8819d46ac|1088|00075674ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/optimist/example/bool.js|INST_NEW|Down|1335768806|4c581c1dca9e2ad07d7668c0bf59b13b|235|00075732ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/optionator/lib/index.js|INST_NEW|Down|1474486992|73c334df847ff295aa1f10a3a210ca22|18495|00075778ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/parse-json/license|INST_NEW|Down|1396798991|277e4f9ac0599eebc5ba6d7f3d27c0d5|1119|00075925ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/performance-now/test/performance-now.coffee|INST_NEW|Down|1484002078|3eae38d1eb73d16bf4583ebb3bb337ea|1497|00076061ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/path-key/license|INST_NEW|Down|1396798991|b8a5fb44ebc31e0df1c995276baf1e9e|1119|00076004ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/performance-now/test/scripts/delayed-require.coffee|INST_NEW|Down|1484000809|9116ddbb309e796cfef388badd15df45|362|00076070ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/pluralize/package.json|INST_NEW|Down|1522758265|75d45448dbe79df4116063040caa444e|2907|00076094ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/postcss-discard-duplicates/node_modules/has-flag/license|INST_NEW|Down|1396798991|0b274694630b1b97b36dd77b14f544d4|1119|00076507ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/postcss-unique-selectors/CHANGELOG.md|INST_NEW|Down|1454805166|ff78502c982181e0c0d34aaa5fee7d5d|248|00078091ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/postcss-discard-overridden/node_modules/has-flag/license|INST_NEW|Down|1396798991|3d3f2d82f2f7b5ffe0ca2303747cb51f|1119|00076665ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/postcss-filter-plugins/node_modules/postcss/CHANGELOG.md|INST_NEW|Down|1507124902|ec063c8d53d1c663f8e171731cec4887|15393|00076828ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:34||front/node_modules/postcss-discard-duplicates/node_modules/postcss/docs/guidelines/runner.md|INST_NEW|Down|1507124904|00fd6d5e89bcedcea49cd01877f87cd7|4489|00076530ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/punycode/README.md|INST_NEW|Down|1477286159|85a574ffa2bb82140fef2cc1b7f31453|4941|00078552ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/regex-not/LICENSE|INST_NEW|Down|1519091381|73c29031e89d242cec166a7d85d1eed0|1089|00079058ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/querystring/test/common-index.js|INST_NEW|Down|1358665842|cb300fa1413e17eb7d0813ba2552eb45|54|00078605ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/react-scripts/config/jest/babelTransform.js|INST_NEW|Down|0|54dedf6895ac0997fa9ef950729cdb9c|390|00078810ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/react/umd/react.development.js|INST_NEW|Down|1522353817|bd6545d74587a3e75ee6ba3ce7c5541b|56156|00078741ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/renderkid/lib/layout/SpecialString.js|INST_NEW|Down|1489481091|edefdaef38f5d3aea6f596748633abe3|4424|00079170ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/renderkid/lib/renderKid/styleApplier/block.js|INST_NEW|Down|1489481091|aa091dcc103fea7de2a942d6d5b1fbe0|2025|00079193ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/renderkid/node_modules/utila/scripts/coffee/lib/_common.coffee|INST_NEW|Down|1392908719|512309c3114b7939bc51aea0a1b7b35c|1773|00079242ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/resolve/test/resolver/incorrect_main/index.js|INST_NEW|Down|1492632494|66390d7daaab8106393461f73e6cf184|116|00079410ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/snapdragon/node_modules/kind-of/README.md|INST_NEW|Down|1507878123|a1bba9c9103761561e5bf07df8e1cbb7|10199|00079887ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/snapdragon/node_modules/is-data-descriptor/LICENSE|INST_NEW|Down|1440999537|99cdcd5de788e7fb54efa9a5cfec61a3|1083|00079876ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/resolve/test/resolver/same_names/foo.js|INST_NEW|Down|1493226834|0fdb5e4390d4f764e3a223496914292e|21|00079416ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:35||front/node_modules/snapdragon/node_modules/source-map/dist/source-map.debug.js|INST_NEW|Down|1503322374|ec148f4f7a5da8151370acc42972e324|260210|00079907ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/snapdragon-node/README.md|INST_NEW|Down|1493640404|99e2c7669edfe2841955a252befc689f|11962|00079917ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/spdx-expression-parse/LICENSE|INST_NEW|Down|1519690199|38a8b18a220297d69b0c5930929142fc|1111|00080227ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/snapdragon-util/node_modules/kind-of/index.js|INST_NEW|Down|1493120356|3c3e95ff80ce4bff85124fec55525b0e|2407|00079938ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/sockjs-client/lib/transport/receiver/htmlfile.js|INST_NEW|Down|1485108002|1cf8cc077d65285c05b5faffdf575b06|2204|00080098ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/sshpk/LICENSE|INST_NEW|Down|1446856544|540ded010adb52ef345ebb6f91d15143|1067|00080308ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/string-length/package.json|INST_NEW|Down|1522758264|cc700fbb4c1081144388db3daed73840|2631|00080453ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/string-length/readme.md|INST_NEW|Down|1437081288|3327a99f1251bd0901f6178428dd00c5|682|00080451ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/string_decoder/LICENSE|INST_NEW|Down|1498155080|309426b48ffef877499715965f96bc72|2338|00080462ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/type-check/LICENSE|INST_NEW|Down|1428793762|515628d6f36d5914b64da9d330ea4629|1054|00080964ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/through/LICENSE.MIT|INST_NEW|Down|1401750728|95612720383f5ce1d6dd9aa7b48bbbd5|1088|00080830ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:36||front/node_modules/yargs/node_modules/camelcase/license|INST_NEW|Down|1396798991|f8d228b2b7bca1e489bfd77874461729|1119|00082457ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:37||back/src/main/java/com/rhododendron/dashboardisep/Controler|INST_REMOVE|Up|1525250611|5ae97a3333ea0|0|00109230ocjcy0wvp681|4||204|0|0|||INST_NONE|
+#=#=#=# Syncrun finished 2018-05-09T11:24:30 (last step: 11764 msec, total: 46462 msec)
+#=#=#=# Syncrun started 2018-05-09T11:24:45
+#=#=#=#=# Propagation starts 2018-05-09T11:24:52 (last step: 6220 msec, total: 6220 msec)
+||back/src/main/java/com/rhododendron/dashboardisep/Entities|INST_NEW|Down|1525280605|5ae9ef5d53c21|0|00109228ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Entities à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/Group.java|INST_NEW|Down|1525280537|1194b2a5524be2ffff43e3891bf9c920|734|00109224ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/User.java|INST_NEW|Down|1525104841|4578c8a62d932eb2dfb10a89c3119bb2|1417|00053771ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories|INST_NEW|Down|1525250192|5ae97890d88b1|0|00109232ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Repositories à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java|INST_NEW|Down|1525250024|f9d5965bcf0aaae42649976a340b7b41|174|00109225ocjcy0wvp681|2|Le fichier back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java ne peut pas être téléchargé en raison d'un conflit sur le nom de fichier local. |0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/UserRepository.java|INST_NEW|Down|1522755907|2e8ef0b71520af5cf285359c74dfc417|172|00053776ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+09:25:59||back/target/classes/application.properties|INST_SYNC|Up|1525857863|fa16b60234c7d07259c7c55b31037966|188|00109151ocjcy0wvp681|4||204|188|1525280557|be32f369024d7b6f74661a3c94a417cf|00109151ocjcy0wvp681|INST_NONE|
+09:25:59||back/target/classes/com/rhododendron/dashboardisep/GroupControler.class|INST_SYNC|Up|1525857867|40a7e3652c6909fad1ce3758e1244ecc|3666|00109659ocjcy0wvp681|4||204|2314|1525280561|60710a98fff4bdf1ab07b0bb4d4b7d51|00109659ocjcy0wvp681|INST_NONE|
+09:25:59||back/target/classes/com/rhododendron/dashboardisep/Student.class|INST_SYNC|Up|1525857867|d5531b0164c5ad62218e0fb94b201899|2584|00115972ocjcy0wvp681|4||204|2584|1525857763|e95ae516ced1542fe45610c5fb09ddf5|00115972ocjcy0wvp681|INST_NONE|
+09:25:59||back/target/classes/com/rhododendron/dashboardisep/GroupRepository.class|INST_SYNC|Up|1525857867|ceb6fb2a1da982273eff25a05f7965ab|356|00109660ocjcy0wvp681|4||204|349|1525280561|0cdda31abc566f733cb57d27f8be9ee6|00109660ocjcy0wvp681|INST_NONE|
+09:25:59||back/target/classes/com/rhododendron/dashboardisep/DashboardisepApplication.class|INST_SYNC|Up|1525857867|f50b26bfcc184af95a3e19dd6205f121|788|00109658ocjcy0wvp681|4||204|788|1525280561|9e11a6755f8a255eb129e173cab5c8ae|00109658ocjcy0wvp681|INST_NONE|
+||back/target/maven-status/maven-compiler-plugin/testCompile|INST_NEW|Down|1525280638|5ae9ef7e690d3|0|00109655ocjcy0wvp681|4||0|0|0|||INST_NONE|
+||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile|INST_NEW|Down|1525280638|5ae9ef7e690d3|0|00109666ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:25:59||back/target/classes/com/rhododendron/dashboardisep/StudentController.class|INST_REMOVE|Up|1525857763|80f60b9cb706f5ac8948c895cf81e615|3851|00115973ocjcy0wvp681|4||204|0|0|||INST_NONE|
+||back/target/test-classes|INST_NEW|Down|1525280638|5ae9ef7e711f5|0|00109647ocjcy0wvp681|4||0|0|0|||INST_NONE|
+||back/target/test-classes/com|INST_NEW|Down|1525280638|5ae9ef7e711f5|0|00109651ocjcy0wvp681|4||0|0|0|||INST_NONE|
+||back/target/test-classes/com/rhododendron|INST_NEW|Down|1525280638|5ae9ef7e711f5|0|00109654ocjcy0wvp681|4||0|0|0|||INST_NONE|
+||back/target/test-classes/com/rhododendron/dashboardisep|INST_NEW|Down|1525280638|5ae9ef7e711f5|0|00109667ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:26:00||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst|INST_NEW|Down|1525280563|a36ebc2eb878cc3c3a253a5c3995cd4b|67|00109670ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:26:00||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst|INST_NEW|Down|1525280563|b34f44e797b821eee9642b659421e271|86|00109671ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:26:00||back/target/classes/com/rhododendron/dashboardisep/StudentGroup.class|INST_SYNC|Up|1525857867|f2291a3ecc7284f8b3470d7a309f2d8a|2372|00115974ocjcy0wvp681|4||204|2372|1525857763|9b97ce54f6e3dca0ec5cb63c0c80129d|00115974ocjcy0wvp681|INST_NONE|
+09:26:00||back/target/classes/com/rhododendron/dashboardisep/StudentRepository.class|INST_SYNC|Up|1525857868|edf1db4203af2790de04ce21e7453b88|355|00115975ocjcy0wvp681|4||204|355|1525857763|8617dd52face49fe5c10d9fe868eeb4d|00115975ocjcy0wvp681|INST_NONE|
+09:26:01||back/target/test-classes/com/rhododendron/dashboardisep/DashboardisepApplicationTests.class|INST_NEW|Down|1525280563|f008afe48298c634a04c3aeffb2e2bb1|677|00109672ocjcy0wvp681|4||0|0|0|||INST_NONE|
+09:26:01||back/target/generated-test-sources|INST_REMOVE|Up|1525280636|5ae9ef7c78e5f|0|00109645ocjcy0wvp681|4||204|0|0|||INST_NONE|
+#=#=#=# Syncrun finished 2018-05-09T11:24:54 (last step: 2103 msec, total: 8323 msec)
+#=#=#=# Syncrun started 2018-05-09T11:25:54
+#=#=#=#=# Propagation starts 2018-05-09T11:26:00 (last step: 5855 msec, total: 5855 msec)
+||back/src/main/java/com/rhododendron/dashboardisep/Entities|INST_NEW|Down|1525280605|5ae9ef5d53c21|0|00109228ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Entities à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/Group.java|INST_NEW|Down|1525280537|1194b2a5524be2ffff43e3891bf9c920|734|00109224ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/User.java|INST_NEW|Down|1525104841|4578c8a62d932eb2dfb10a89c3119bb2|1417|00053771ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories|INST_NEW|Down|1525250192|5ae97890d88b1|0|00109232ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Repositories à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java|INST_NEW|Down|1525250024|f9d5965bcf0aaae42649976a340b7b41|174|00109225ocjcy0wvp681|2|Le fichier back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java ne peut pas être téléchargé en raison d'un conflit sur le nom de fichier local. |0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/UserRepository.java|INST_NEW|Down|1522755907|2e8ef0b71520af5cf285359c74dfc417|172|00053776ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+09:27:08||back/target/classes/application.properties|INST_SYNC|Up|1525857953|7dee98c33415d41db14875b4d99ea977|188|00109151ocjcy0wvp681|4||204|188|1525857863|fa16b60234c7d07259c7c55b31037966|00109151ocjcy0wvp681|INST_NONE|
+09:27:08||back/target/test-classes|INST_REMOVE|Up|1525280638|5ae9ef7e711f5|0|00109647ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:27:08||back/target/generated-sources|INST_REMOVE|Up|1525280635|5ae9ef7beeb14|0|00109644ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:27:08||back/target/maven-status|INST_REMOVE|Up|1525280638|5ae9ef7e690d3|0|00109646ocjcy0wvp681|4||204|0|0|||INST_NONE|
+09:27:08||back/src/main/java/com/rhododendron/dashboardisep/controlers/StudentController.java|INST_SYNC|Up|1525857934|a09954ee3ca1897ae6beeba2dd134ee5|2014|00115967ocjcy0wvp681|4||204|2001|1525857827|c840cbb52fc1d1810ea431ae9e57cba9|00115967ocjcy0wvp681|INST_NONE|
+09:27:08||back/target/classes/com|INST_REMOVE|Up|1525857961|5af2bea9468f1|0|00109643ocjcy0wvp681|4||204|0|0|||INST_NONE|
+#=#=#=# Syncrun finished 2018-05-09T11:26:02 (last step: 1650 msec, total: 7506 msec)
+#=#=#=# Syncrun started 2018-05-09T11:26:54
+#=#=#=#=# Propagation starts 2018-05-09T11:26:59 (last step: 4742 msec, total: 4742 msec)
+||back/src/main/java/com/rhododendron/dashboardisep/Entities|INST_NEW|Down|1525280605|5ae9ef5d53c21|0|00109228ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Entities à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/Group.java|INST_NEW|Down|1525280537|1194b2a5524be2ffff43e3891bf9c920|734|00109224ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/User.java|INST_NEW|Down|1525104841|4578c8a62d932eb2dfb10a89c3119bb2|1417|00053771ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories|INST_NEW|Down|1525250192|5ae97890d88b1|0|00109232ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Repositories à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java|INST_NEW|Down|1525250024|f9d5965bcf0aaae42649976a340b7b41|174|00109225ocjcy0wvp681|2|Le fichier back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java ne peut pas être téléchargé en raison d'un conflit sur le nom de fichier local. |0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/UserRepository.java|INST_NEW|Down|1522755907|2e8ef0b71520af5cf285359c74dfc417|172|00053776ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+09:28:06||back/target/test-classes|INST_NEW|Up|1525857960||96|00115990ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:06||back/target/generated-sources|INST_NEW|Up|1525857955||96|00115993ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:06||back/target/generated-test-sources|INST_NEW|Up|1525857958||96|00115989ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:06||back/target/maven-status|INST_NEW|Up|1525857955||96|00115992ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:06||back/target/classes/com|INST_NEW|Up|1525857958||96|00115991ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:06||back/src/main/java/com/rhododendron/dashboardisep/controlers/StudentController.java|INST_SYNC|Up|1525858013|1ca39e2aa123c2fe33c3d7261224d293|2029|00115967ocjcy0wvp681|4||204|2014|1525857934|a09954ee3ca1897ae6beeba2dd134ee5|00115967ocjcy0wvp681|INST_NONE|
+09:28:07||back/target/test-classes/com|INST_NEW|Up|1525857960||96|00115995ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:07||back/target/maven-status/maven-compiler-plugin|INST_NEW|Up|1525857958||128|00115997ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:07||back/target/classes/com/rhododendron|INST_NEW|Up|1525857958||96|00115996ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:07||back/target/generated-test-sources/test-annotations|INST_NEW|Up|1525857958||64|00115998ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:07||back/target/generated-sources/annotations|INST_NEW|Up|1525857955||64|00115999ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/test-classes/com/rhododendron|INST_NEW|Up|1525857960||96|00116000ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/maven-status/maven-compiler-plugin/testCompile|INST_NEW|Up|1525857958||96|00116002ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/maven-status/maven-compiler-plugin/compile|INST_NEW|Up|1525857955||96|00116001ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep|INST_NEW|Up|1525857958||288|00116003ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep/GroupControler.class|INST_NEW|Up|1525857958|891a3ba59cb2af281c427934a8e23e1d|3666|00116004ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep/GroupRepository.class|INST_NEW|Up|1525857958|ee9dbf063656fc36decf9176710242fa|356|00116006ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep/Student.class|INST_NEW|Up|1525857958|89ebba7f58a33981c9e9e5e8646a8da2|2584|00116005ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep/StudentGroup.class|INST_NEW|Up|1525857958|78e5d2edfefdecb1413dde32985767f3|2372|00116007ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep/StudentController.class|INST_NEW|Up|1525857958|f1d804a0a9496d83fc41be199f0049f1|3667|00116008ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:08||back/target/classes/com/rhododendron/dashboardisep/DashboardisepApplication.class|INST_NEW|Up|1525857958|51af9b78b7bbbf0016e28cab057fde9a|788|00116009ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile|INST_NEW|Up|1525857960||128|00116010ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/classes/com/rhododendron/dashboardisep/StudentRepository.class|INST_NEW|Up|1525857958|cff18bff8b7b46cb819ad8bef4a0df1b|355|00116012ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/maven-status/maven-compiler-plugin/compile/default-compile|INST_NEW|Up|1525857958||128|00116013ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/test-classes/com/rhododendron/dashboardisep|INST_NEW|Up|1525857960||96|00116011ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/test-classes/com/rhododendron/dashboardisep/DashboardisepApplicationTests.class|INST_NEW|Up|1525857960|90b6404a954663d9c22dded9cf86ff7a|677|00116014ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst|INST_NEW|Up|1525857958|94d7221bc3b38259beb9b4015fab74ef|372|00116016ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst|INST_NEW|Up|1525857958|e37043dc6950ddcc30b89b3013eb3e0b|571|00116015ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst|INST_NEW|Up|1525857960|8bec8ab5311c4f3dc46e273079503b84|67|00116017ocjcy0wvp681|4||201|0|0|||INST_NONE|
+09:28:09||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst|INST_NEW|Up|1525857960|e2535b7ee65b530d26ff1011eb702ea4|86|00116018ocjcy0wvp681|4||201|0|0|||INST_NONE|
+#=#=#=# Syncrun finished 2018-05-09T11:27:02 (last step: 3551 msec, total: 8293 msec)
+#=#=#=# Syncrun started 2018-05-09T11:27:54
+#=#=#=#=# Propagation starts 2018-05-09T11:28:00 (last step: 5807 msec, total: 5807 msec)
+||back/src/main/java/com/rhododendron/dashboardisep/Entities|INST_NEW|Down|1525280605|5ae9ef5d53c21|0|00109228ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Entities à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/Group.java|INST_NEW|Down|1525280537|1194b2a5524be2ffff43e3891bf9c920|734|00109224ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/User.java|INST_NEW|Down|1525104841|4578c8a62d932eb2dfb10a89c3119bb2|1417|00053771ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories|INST_NEW|Down|1525250192|5ae97890d88b1|0|00109232ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Repositories à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java|INST_NEW|Down|1525250024|f9d5965bcf0aaae42649976a340b7b41|174|00109225ocjcy0wvp681|2|Le fichier back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java ne peut pas être téléchargé en raison d'un conflit sur le nom de fichier local. |0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/UserRepository.java|INST_NEW|Down|1522755907|2e8ef0b71520af5cf285359c74dfc417|172|00053776ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+09:29:08||back/target/classes/application.properties|INST_SYNC|Up|1525858054|8ce2bfce02dba1d621afd07316e07256|188|00109151ocjcy0wvp681|4||204|188|1525857953|7dee98c33415d41db14875b4d99ea977|00109151ocjcy0wvp681|INST_NONE|
+09:29:08||back/target/classes/com/rhododendron/dashboardisep/DashboardisepApplication.class|INST_SYNC|Up|1525858057|c5013a0e9c1ecd53907b1581e46fbb0b|788|00116009ocjcy0wvp681|4||204|788|1525857958|51af9b78b7bbbf0016e28cab057fde9a|00116009ocjcy0wvp681|INST_NONE|
+09:29:08||back/target/classes/com/rhododendron/dashboardisep/GroupRepository.class|INST_SYNC|Up|1525858057|3f0d2ce79c89a534536b6220d26ec9eb|356|00116006ocjcy0wvp681|4||204|356|1525857958|ee9dbf063656fc36decf9176710242fa|00116006ocjcy0wvp681|INST_NONE|
+09:29:08||back/target/classes/com/rhododendron/dashboardisep/GroupControler.class|INST_SYNC|Up|1525858057|625e69075ba72d3c7744c18823ca6d22|3666|00116004ocjcy0wvp681|4||204|3666|1525857958|891a3ba59cb2af281c427934a8e23e1d|00116004ocjcy0wvp681|INST_NONE|
+09:29:08||back/target/classes/com/rhododendron/dashboardisep/Student.class|INST_SYNC|Up|1525858057|86e548c25ff0e52caa786b3d3b8f10ef|2584|00116005ocjcy0wvp681|4||204|2584|1525857958|89ebba7f58a33981c9e9e5e8646a8da2|00116005ocjcy0wvp681|INST_NONE|
+09:29:08||back/src/main/java/com/rhododendron/dashboardisep/controlers/StudentController.java|INST_SYNC|Up|1525858037|2ad63a57f346c3582cc38f73885e4c49|1881|00115967ocjcy0wvp681|4||204|2029|1525858013|1ca39e2aa123c2fe33c3d7261224d293|00115967ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/classes/com/rhododendron/dashboardisep/StudentGroup.class|INST_SYNC|Up|1525858057|f8d6803c0a23b33c650c779fed87d44f|2372|00116007ocjcy0wvp681|4||204|2372|1525857958|78e5d2edfefdecb1413dde32985767f3|00116007ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/classes/com/rhododendron/dashboardisep/StudentController.class|INST_SYNC|Up|1525858057|88d410feb5949220ac1845a2e004fca6|3647|00116008ocjcy0wvp681|4||204|3667|1525857958|f1d804a0a9496d83fc41be199f0049f1|00116008ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/classes/com/rhododendron/dashboardisep/StudentRepository.class|INST_SYNC|Up|1525858057|9f70ebdf251ec411109ef453e57d39f7|355|00116012ocjcy0wvp681|4||204|355|1525857958|cff18bff8b7b46cb819ad8bef4a0df1b|00116012ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst|INST_SYNC|Up|1525858057|c0fb6e1ea000ba73b4ad4d8ed132b8f0|571|00116015ocjcy0wvp681|4||204|571|1525857958|e37043dc6950ddcc30b89b3013eb3e0b|00116015ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst|INST_SYNC|Up|1525858057|b0f980a8677aac206b02d4c73536e411|372|00116016ocjcy0wvp681|4||204|372|1525857958|94d7221bc3b38259beb9b4015fab74ef|00116016ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst|INST_SYNC|Up|1525858059|6f17170fc4dd67e226fd5eaf8054874c|67|00116017ocjcy0wvp681|4||204|67|1525857960|8bec8ab5311c4f3dc46e273079503b84|00116017ocjcy0wvp681|INST_NONE|
+09:29:09||back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst|INST_SYNC|Up|1525858059|d443280f9ab4a072daf3f82bff9cfcda|86|00116018ocjcy0wvp681|4||204|86|1525857960|e2535b7ee65b530d26ff1011eb702ea4|00116018ocjcy0wvp681|INST_NONE|
+09:29:10||back/target/test-classes/com/rhododendron/dashboardisep/DashboardisepApplicationTests.class|INST_SYNC|Up|1525858059|b3f8d2d1cba4772c70a3777890037111|677|00116014ocjcy0wvp681|4||204|677|1525857960|90b6404a954663d9c22dded9cf86ff7a|00116014ocjcy0wvp681|INST_NONE|
+#=#=#=# Syncrun finished 2018-05-09T11:28:03 (last step: 3316 msec, total: 9123 msec)
+#=#=#=# Syncrun started 2018-05-09T11:28:54
+#=#=#=#=# Propagation starts 2018-05-09T11:29:00 (last step: 5802 msec, total: 5802 msec)
+||back/src/main/java/com/rhododendron/dashboardisep/Entities|INST_NEW|Down|1525280605|5ae9ef5d53c21|0|00109228ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Entities à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/Group.java|INST_NEW|Down|1525280537|1194b2a5524be2ffff43e3891bf9c920|734|00109224ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Entities/User.java|INST_NEW|Down|1525104841|4578c8a62d932eb2dfb10a89c3119bb2|1417|00053771ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories|INST_NEW|Down|1525250192|5ae97890d88b1|0|00109232ocjcy0wvp681|2|Attention, collision possible avec /Users/aymericdejavel/Documents/ProjetsInfo/dashboardisep/back/src/main/java/com/rhododendron/dashboardisep/Repositories à cause de la casse|0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java|INST_NEW|Down|1525250024|f9d5965bcf0aaae42649976a340b7b41|174|00109225ocjcy0wvp681|2|Le fichier back/src/main/java/com/rhododendron/dashboardisep/Repositories/GroupRepository.java ne peut pas être téléchargé en raison d'un conflit sur le nom de fichier local. |0|0|0|||INST_NONE|
+||back/src/main/java/com/rhododendron/dashboardisep/Repositories/UserRepository.java|INST_NEW|Down|1522755907|2e8ef0b71520af5cf285359c74dfc417|172|00053776ocjcy0wvp681|1|L'opération est annulée|0|0|0|||INST_NONE|
+#=#=#=# Syncrun finished 2018-05-09T11:29:00 (last step: 191 msec, total: 5993 msec)

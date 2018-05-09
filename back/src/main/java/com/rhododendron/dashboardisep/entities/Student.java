@@ -13,6 +13,10 @@ public class Student {
 
     private String name;
 
+    private String lastname;
+
+    private int role=0;
+
     private String email;
 
     @ManyToOne
@@ -20,7 +24,7 @@ public class Student {
     private StudentGroup group ;
 
     @OneToMany(mappedBy = "tutor")
-    private List<StudentGroup> istutorof;
+    private List<StudentGroup> istutorof = new ArrayList<StudentGroup>();
 
     public Long getId() {
         return id;
@@ -48,7 +52,13 @@ public class Student {
 
 
     public StudentGroup getGroup() {
-        return group;
+        if (this.istutorof.size() ==0){
+            return group;
+        }
+        else {
+            return null;
+        }
+
     }
 
     public void setGroup(StudentGroup group) {
@@ -65,5 +75,21 @@ public class Student {
 
     public void setIstutorof(List<StudentGroup> istutorof) {
         this.istutorof = istutorof;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

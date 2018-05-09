@@ -47,5 +47,17 @@ public class GroupControler {
         return group;
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping(path="/getStudents/{group_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
+    public @ResponseBody Map<String, Object> getStudentsByGroup(@PathVariable(value="group_id") String id) {
+        StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+        List<Student> students = studentRepository.findByGroup(group);
+        Map map = new HashMap();
+        map.put("students",students);
+        map.put("groupId", group.getId());
+        map.put("groupName",group.getName());
+        return map;
+    }
+
 
 }

@@ -14,6 +14,7 @@ import java.util.*;
 public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
     private GroupRepository groupRepository;
     @CrossOrigin(origins = "*")
     @PostMapping(path="/add",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
@@ -33,10 +34,9 @@ public class StudentController {
     }
     @CrossOrigin(origins = "*")
     @PostMapping(path="/associateGroupToTutor/{tutor_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
-    public @ResponseBody Student associateStudentToGroup(@RequestBody Map<String, Object> payload,@PathVariable(value="tutor_id") String id) {
+    public @ResponseBody Student associateGroupToTutor(@RequestBody Map<String, Object> payload,@PathVariable(value="tutor_id") String id) {
         Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
         int groupId = (Integer)payload.get("groupId");
-        System.out.println(groupId);
         StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
         user.makeTutor(group);
         studentRepository.save(user);
