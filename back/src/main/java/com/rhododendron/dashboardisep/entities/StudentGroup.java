@@ -15,6 +15,9 @@ public class StudentGroup {
     @OneToMany(mappedBy = "group")
     private List<Student> students = new ArrayList<Student>();
 
+    @OneToMany(mappedBy = "group")
+    private List<Phase> phases = new ArrayList<Phase>();
+
     @ManyToOne
     @JoinColumn(name="istutorof_id")
     private Student tutor;
@@ -55,5 +58,17 @@ public class StudentGroup {
 
     public void setTutor(Student tutor) {
         this.tutor = tutor;
+    }
+
+    @JsonIgnore
+    public List<Phase> getPhases() {
+        return phases;
+    }
+
+    public void setPhases(List<Phase> phases) {
+        this.phases = phases;
+    }
+    public void addPhase(Phase phase) {
+        this.phases.add(phase);
     }
 }

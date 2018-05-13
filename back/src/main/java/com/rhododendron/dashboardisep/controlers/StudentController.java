@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 import java.util.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @RequestMapping(path="/users")
@@ -16,9 +17,17 @@ public class StudentController {
     private StudentRepository studentRepository;
     @Autowired
     private GroupRepository groupRepository;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public StudentController(BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
+
     @CrossOrigin(origins = "*")
     @PostMapping(path="/add",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Student addNewUser(@RequestBody Student student) {
+        student.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
         studentRepository.save(student);
         return student;
     }

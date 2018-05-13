@@ -16,6 +16,8 @@ public class GroupControler {
     private GroupRepository groupRepository;
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
+    private PhaseRepository phaseRepository;
     @CrossOrigin(origins = "*")
     @PostMapping(path="/add",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody StudentGroup addNewGroup(@RequestBody StudentGroup group) {
@@ -54,6 +56,18 @@ public class GroupControler {
         List<Student> students = studentRepository.findByGroup(group);
         Map map = new HashMap();
         map.put("students",students);
+        map.put("groupId", group.getId());
+        map.put("groupName",group.getName());
+        return map;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping(path="/getPhases/{group_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
+    public @ResponseBody Map<String, Object> getPhasesByGroup(@PathVariable(value="group_id") String id) {
+        StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+        List<Phase> phases = phaseRepository.findByGroup(group);
+        Map map = new HashMap();
+        map.put("phases",phases);
         map.put("groupId", group.getId());
         map.put("groupName",group.getName());
         return map;

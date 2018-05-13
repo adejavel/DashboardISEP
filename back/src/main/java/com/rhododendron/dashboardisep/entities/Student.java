@@ -19,12 +19,19 @@ public class Student {
 
     private String email;
 
+    private String password;
+
+    private String username;
+
     @ManyToOne
     @JoinColumn(name="group_id")
     private StudentGroup group ;
 
     @OneToMany(mappedBy = "tutor")
     private List<StudentGroup> istutorof = new ArrayList<StudentGroup>();
+
+    @ManyToMany
+    private List<Task> tasks = new ArrayList<Task>();
 
     public Long getId() {
         return id;
@@ -58,7 +65,6 @@ public class Student {
         else {
             return null;
         }
-
     }
 
     public void setGroup(StudentGroup group) {
@@ -91,5 +97,29 @@ public class Student {
 
     public void setRole(int role) {
         this.role = role;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername(){
+        return this.email;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
