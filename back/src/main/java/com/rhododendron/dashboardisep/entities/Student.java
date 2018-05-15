@@ -3,6 +3,7 @@ package com.rhododendron.dashboardisep;
 import javax.persistence.*;
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
@@ -107,12 +108,14 @@ public class Student {
         this.tasks = tasks;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
-
-    public void setPassword(String password) {
+    @JsonProperty
+    public Student setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public String getUsername(){

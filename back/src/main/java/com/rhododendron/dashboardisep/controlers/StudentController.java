@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 import java.util.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 
 @RequestMapping(path="/users")
@@ -29,6 +30,16 @@ public class StudentController {
     public @ResponseBody Student addNewUser(@RequestBody Student student) {
         student.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
         studentRepository.save(student);
+        return student;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping(path="/me")
+    public @ResponseBody Student getMeUser() {
+        //Student user = (Student) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        //String username = user.getUsername();
+        Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal().toString()).setPassword(null);
         return student;
     }
     @CrossOrigin(origins = "*")
