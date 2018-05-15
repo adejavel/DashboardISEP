@@ -17,6 +17,8 @@ public class Task {
 
     private int end_date;
 
+    private boolean done;
+
     @ManyToOne
     @JoinColumn(name="phase_id")
     private Phase phase;
@@ -57,6 +59,7 @@ public class Task {
         this.end_date = end_date;
     }
 
+    @JsonIgnore
     public Phase getPhase() {
         return phase;
     }
@@ -71,5 +74,20 @@ public class Task {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public void addStudent(Student student){
+        this.students.add(student);
+    }
+    public void deleteStudent(Student st){
+        this.students.remove(st);
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }

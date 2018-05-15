@@ -9,6 +9,7 @@ import java.util.Optional;
 import java.util.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.core.context.SecurityContextHolder;
+import java.lang.*;
 
 
 @RequestMapping(path="/users")
@@ -18,6 +19,8 @@ public class StudentController {
     private StudentRepository studentRepository;
     @Autowired
     private GroupRepository groupRepository;
+    @Autowired
+    private PhaseRepository phaseRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public StudentController(BCryptPasswordEncoder bCryptPasswordEncoder) {
@@ -28,7 +31,22 @@ public class StudentController {
     @CrossOrigin(origins = "*")
     @PostMapping(path="/add",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Student addNewUser(@RequestBody Student student) {
+        try {
+            Student registrar = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString()).setPassword(null);
+        }
+        catch (Exception e){
+            student.setRole(0);
+        }
+        if (!student.getEmail().endsWith("@isep.fr")){
+            throw new RuntimeException("bad email");
+        }
+        Student existingSt = studentRepository.findByEmail(student.getEmail());
+        if (existingSt!=null){
+            throw new RuntimeException("already existing user");
+        }
         student.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
+        student.setUsername(student.getEmail());
         studentRepository.save(student);
         return student;
     }
@@ -36,11 +54,23 @@ public class StudentController {
     @CrossOrigin(origins = "*")
     @GetMapping(path="/me")
     public @ResponseBody Student getMeUser() {
-        //Student user = (Student) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        //String username = user.getUsername();
         Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal().toString()).setPassword(null);
+                .getPrincipal().toString());
         return student;
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping(path="/myGroupPhases")
+    public @ResponseBody Map<String, Object> getMyPhases() {
+        Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal().toString());
+        StudentGroup group = student.getGroup();
+        List<Phase> phases = phaseRepository.findByGroup(group);
+        Map map = new HashMap();
+        map.put("status",true);
+        map.put("phases",phases);
+        map.put("groupId",group.getId());
+        map.put("groupName",group.getName());
+        return map;
     }
     @CrossOrigin(origins = "*")
     @GetMapping(path="/all")
@@ -63,5 +93,17 @@ public class StudentController {
         group.setTutor(user);
         groupRepository.save(group);
         return user;
+    }
+    @CrossOrigin(origins = "*")
+    @DeleteMapping(path="/one/{id}")
+    public @ResponseBody Map<String, Object> deleteOneUser(@PathVariable(value="id") String id) {
+        Student student = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+        student.getIstutorof().forEach(item->{
+            item.setTutor(null);
+        });
+        studentRepository.delete(student);
+        Map map = new HashMap();
+        map.put("status",true);
+        return map;
     }
 }

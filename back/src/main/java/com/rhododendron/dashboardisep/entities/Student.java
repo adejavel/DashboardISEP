@@ -100,12 +100,17 @@ public class Student {
         this.role = role;
     }
 
+    @JsonIgnore
     public List<Task> getTasks() {
         return tasks;
     }
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public void addTask(Task task){
+        this.tasks.add(task);
     }
 
     @JsonIgnore
@@ -124,5 +129,9 @@ public class Student {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void deleteTask(Task task){
+        this.tasks.remove(task);
     }
 }

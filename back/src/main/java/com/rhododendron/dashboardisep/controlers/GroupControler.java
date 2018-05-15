@@ -73,5 +73,17 @@ public class GroupControler {
         return map;
     }
 
+    @CrossOrigin(origins = "*")
+    @DeleteMapping(path="/one/{id}")
+    public @ResponseBody Map<String, Object> deleteOneGroup(@PathVariable(value="id") String id) {
+        StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+        group.getPhases().forEach(item->{
+           item.setGroup(null);
+        });
+        groupRepository.delete(group);
+        Map map = new HashMap();
+        map.put("status",true);
+        return map;
+    }
 
 }

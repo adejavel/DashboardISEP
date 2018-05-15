@@ -17,8 +17,12 @@ public class PhaseControler {
     @Autowired
     private GroupRepository groupRepository;
     @CrossOrigin(origins = "*")
-    @PostMapping(path="/add",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
-    public @ResponseBody Phase addNewPhase(@RequestBody Phase phase) {
+    @PostMapping(path="/add/{id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
+    public @ResponseBody Phase addNewPhase(@RequestBody Phase phase,@PathVariable(value = "id") String id) {
+        StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+        phase.setGroup(group);
+        group.addPhase(phase);
+        groupRepository.save(group);
         phaseRepository.save(phase);
         return phase;
     }
@@ -34,15 +38,16 @@ public class PhaseControler {
     }
 
     @CrossOrigin(origins = "*")
-    @PostMapping(path="/associatePhaseToGroup/{phase_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
-    public @ResponseBody Phase associatePhaseToGroup(@RequestBody Map<String, Object> payload,@PathVariable(value="phase_id") String id) {
+    @DeleteMapping(path="/one/{id}")
+    public @ResponseBody Map<String, Object> deleteOnePhase(@PathVariable(value="id") String id) {
         Phase phase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-        int groupId = (Integer)payload.get("groupId");
-        StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
-        group.addPhase(phase);
-        phase.setGroup(group);
-        phaseRepository.save(phase);
-        groupRepository.save(group);
-        return phase;
+        phase.getTasks().forEach(item->{
+            item.setPhase(null);
+        });
+        phaseRepository.delete(phase);
+        Map map = new HashMap();
+        map.put("status",true);
+        return map;
     }
+
 }
