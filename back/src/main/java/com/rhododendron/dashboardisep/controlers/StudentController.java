@@ -21,6 +21,8 @@ public class StudentController {
     private GroupRepository groupRepository;
     @Autowired
     private PhaseRepository phaseRepository;
+    @Autowired
+    private TaskRepository taskRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public StudentController(BCryptPasswordEncoder bCryptPasswordEncoder) {
@@ -61,49 +63,119 @@ public class StudentController {
     @CrossOrigin(origins = "*")
     @GetMapping(path="/myGroupPhases")
     public @ResponseBody Map<String, Object> getMyPhases() {
-        Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal().toString());
-        StudentGroup group = student.getGroup();
-        List<Phase> phases = phaseRepository.findByGroup(group);
-        Map map = new HashMap();
-        map.put("status",true);
-        map.put("phases",phases);
-        map.put("groupId",group.getId());
-        map.put("groupName",group.getName());
-        return map;
+        try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            StudentGroup group = student.getGroup();
+            List<Phase> phases = phaseRepository.findByGroup(group);
+            Map map = new HashMap();
+            map.put("status",true);
+            map.put("phases",phases);
+            map.put("groupId",group.getId());
+            map.put("groupName",group.getName());
+            return map;
+        }
+        catch (Exception e){
+            throw new RuntimeException("failed to get phases");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping(path="/myTasks")
+    public @ResponseBody List<Task> getMyTasks() {
+        try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            Iterable<Task> allTasks = taskRepository.findAll();
+            List<Task> userTask = new ArrayList<Task>();
+            allTasks.forEach((task)->{
+                for (int i=0;i<task.getStudents().size();i++){
+                    if (task.getStudents().get(i).getId()==student.getId()){
+                        userTask.add(task);
+                    }
+                }
+            });
+            return userTask;
+        }
+        catch (Exception e){
+            throw new RuntimeException("failed to get phases");
+        }
     }
     @CrossOrigin(origins = "*")
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Student> getAllUsers() {
-        return studentRepository.findAll();
+    public @ResponseBody List<Student> getAllUsers() {
+        Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal().toString());
+        List<Student> students = new ArrayList<Student>();
+
+        studentRepository.findAll().forEach((item)->{
+            if (item.getRole()<=student.getRole()){
+                students.add(item);
+            }
+        });
+        return students;
     }
     @CrossOrigin(origins = "*")
     @GetMapping(path="/one/{id}")
     public @ResponseBody Optional<Student> getOneUser(@PathVariable(value="id") String id) {
-        return studentRepository.findById(Long.valueOf(Integer.parseInt(id)));
+        try {
+            return studentRepository.findById(Long.valueOf(Integer.parseInt(id)));
+        }
+        catch (Exception e){
+            throw new RuntimeException("user not found");
+        }
+
     }
     @CrossOrigin(origins = "*")
     @PostMapping(path="/associateGroupToTutor/{tutor_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Student associateGroupToTutor(@RequestBody Map<String, Object> payload,@PathVariable(value="tutor_id") String id) {
-        Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-        int groupId = (Integer)payload.get("groupId");
-        StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
-        user.makeTutor(group);
-        studentRepository.save(user);
-        group.setTutor(user);
-        groupRepository.save(group);
-        return user;
+        try {
+            Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            int groupId = (Integer)payload.get("groupId");
+            StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
+            user.makeTutor(group);
+            studentRepository.save(user);
+            group.setTutor(user);
+            groupRepository.save(group);
+            return user;
+        }
+        catch (Exception e){
+            throw new RuntimeException("failed to link group and tutor");
+        }
+
     }
     @CrossOrigin(origins = "*")
     @DeleteMapping(path="/one/{id}")
     public @ResponseBody Map<String, Object> deleteOneUser(@PathVariable(value="id") String id) {
-        Student student = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-        student.getIstutorof().forEach(item->{
-            item.setTutor(null);
-        });
-        studentRepository.delete(student);
-        Map map = new HashMap();
-        map.put("status",true);
-        return map;
+        try {
+            Student student = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            student.getIstutorof().forEach(item->{
+                item.setTutor(null);
+            });
+            studentRepository.delete(student);
+            Map map = new HashMap();
+            map.put("status",true);
+            return map;
+        }
+        catch (Exception e){
+            throw new RuntimeException("user not found");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @PostMapping(path="/changeRole/{user_id}")
+    public @ResponseBody Student changeRole(@RequestBody Map<String, Object> payload,@PathVariable(value="user_id") String id) {
+        try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            int role = (Integer)payload.get("role");
+            if (student.getRole()>=role && student.getRole()>=user.getRole()){
+                user.setRole(role);
+                studentRepository.save(user);
+            }
+            return user;
+        }
+        catch (Exception e){
+            throw new RuntimeException("user not found");
+        }
     }
 }

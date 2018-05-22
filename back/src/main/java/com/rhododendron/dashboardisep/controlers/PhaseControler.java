@@ -19,12 +19,18 @@ public class PhaseControler {
     @CrossOrigin(origins = "*")
     @PostMapping(path="/add/{id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Phase addNewPhase(@RequestBody Phase phase,@PathVariable(value = "id") String id) {
-        StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-        phase.setGroup(group);
-        group.addPhase(phase);
-        groupRepository.save(group);
-        phaseRepository.save(phase);
-        return phase;
+        try {
+            StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            phase.setGroup(group);
+            group.addPhase(phase);
+            groupRepository.save(group);
+            phaseRepository.save(phase);
+            return phase;
+        }
+        catch (Exception e){
+            throw new RuntimeException("group not found");
+        }
+
     }
     @CrossOrigin(origins = "*")
     @GetMapping(path="/all")
@@ -34,20 +40,30 @@ public class PhaseControler {
     @CrossOrigin(origins = "*")
     @GetMapping(path="/one/{id}")
     public @ResponseBody Optional<Phase> getOnePhase(@PathVariable(value="id") String id) {
-        return phaseRepository.findById(Long.valueOf(Integer.parseInt(id)));
+        try {
+            return phaseRepository.findById(Long.valueOf(Integer.parseInt(id)));
+        }
+        catch (Exception e){
+            throw new RuntimeException("phase not found");
+        }
     }
 
     @CrossOrigin(origins = "*")
     @DeleteMapping(path="/one/{id}")
     public @ResponseBody Map<String, Object> deleteOnePhase(@PathVariable(value="id") String id) {
-        Phase phase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-        phase.getTasks().forEach(item->{
-            item.setPhase(null);
-        });
-        phaseRepository.delete(phase);
-        Map map = new HashMap();
-        map.put("status",true);
-        return map;
+        try {
+            Phase phase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            phase.getTasks().forEach(item->{
+                item.setPhase(null);
+            });
+            phaseRepository.delete(phase);
+            Map map = new HashMap();
+            map.put("status",true);
+            return map;
+        }
+        catch (Exception e){
+            throw new RuntimeException("phase not found");
+        }
     }
 
 }
