@@ -22,6 +22,8 @@ public class Student {
 
     private String password;
 
+    private String passwordRepeat;
+
     private String username;
 
     @ManyToOne
@@ -133,5 +135,14 @@ public class Student {
 
     public void deleteTask(Task task){
         this.tasks.remove(task);
+    }
+
+    @JsonIgnore
+    public String getPasswordRepeat() {
+        return passwordRepeat;
+    }
+    @JsonProperty
+    public void setPasswordRepeat(String passwordRepeat) {
+        this.passwordRepeat = passwordRepeat;
     }
 }

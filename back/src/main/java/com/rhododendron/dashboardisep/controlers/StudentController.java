@@ -36,6 +36,9 @@ public class StudentController {
         try {
             Student registrar = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
                     .getPrincipal().toString()).setPassword(null);
+            if (registrar.getRole()<student.getRole()){
+                student.setRole(0);
+            }
         }
         catch (Exception e){
             student.setRole(0);
@@ -47,10 +50,16 @@ public class StudentController {
         if (existingSt!=null){
             throw new RuntimeException("already existing user");
         }
-        student.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
-        student.setUsername(student.getEmail());
-        studentRepository.save(student);
-        return student;
+        if (student.getPassword().equals(student.getPasswordRepeat()) && student.getPassword().length()>7){
+            student.setPasswordRepeat("");
+            student.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
+            student.setUsername(student.getEmail());
+            studentRepository.save(student);
+            return student;
+        }else {
+            throw new RuntimeException("password error");
+        }
+
     }
 
     @CrossOrigin(origins = "*")
@@ -108,8 +117,13 @@ public class StudentController {
         List<Student> students = new ArrayList<Student>();
 
         studentRepository.findAll().forEach((item)->{
-            if (item.getRole()<=student.getRole()){
-                students.add(item);
+            try {
+                if (item.getRole()<=student.getRole()){
+                    students.add(item);
+                }
+            }
+            catch (Exception e){
+                System.out.println("item without role");
             }
         });
         return students;
