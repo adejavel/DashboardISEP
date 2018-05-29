@@ -13,6 +13,8 @@ public class Task {
 
     private String name;
 
+    private String description;
+
     private int start_date;
 
     private int end_date;
@@ -89,5 +91,13 @@ public class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

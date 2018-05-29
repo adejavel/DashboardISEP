@@ -18,6 +18,4 @@ public class DashboardisepApplication {
 
 		SpringApplication.run(DashboardisepApplication.class, args);
 	}
-
-
 }

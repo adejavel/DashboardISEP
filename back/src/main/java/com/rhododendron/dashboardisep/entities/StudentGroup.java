@@ -71,4 +71,5 @@ public class StudentGroup {
     public void addPhase(Phase phase) {
         this.phases.add(phase);
     }
+
 }

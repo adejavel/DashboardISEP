@@ -146,6 +146,10 @@ public class StudentController {
             Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
             int groupId = (Integer)payload.get("groupId");
             StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
+            if (group.getTutor()!=null){
+                Student tutor = group.getTutor();
+                tutor.removeGroupFromTutor(group);
+            }
             user.makeTutor(group);
             studentRepository.save(user);
             group.setTutor(user);
@@ -190,6 +194,47 @@ public class StudentController {
         }
         catch (Exception e){
             throw new RuntimeException("user not found");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @PutMapping(path="/modify")
+    public @ResponseBody Student changeStudent(@RequestBody Map<String, Object> payload) {
+        //try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal().toString());
+            System.out.println(student.getName());
+            student.setName(payload.get("name").toString());
+            student.setLastname((String)payload.get("lastname"));
+            studentRepository.save(student);
+            return student;
+        /*
+        }
+        catch (Exception e){
+            throw new RuntimeException("student not found");
+        }*/
+    }
+    @CrossOrigin(origins = "*")
+    @PutMapping(path="/changePassword")
+    public @ResponseBody Map<String, Object> changePassword(@RequestBody Map<String, Object> payload) {
+        try {
+            String password = (String)payload.get("password");
+            String passwordRepeat = (String)payload.get("passwordRepeat");
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            if (password.equals(passwordRepeat) && password.length()>7){
+                student.setPassword(bCryptPasswordEncoder.encode(password));
+                studentRepository.save(student);
+                Map map = new HashMap();
+                map.put("status",true);
+                return map;
+            }else {
+                Map map = new HashMap();
+                map.put("status",false);
+                return map;
+            }
+        }
+        catch (Exception e){
+            throw new RuntimeException("error while changing password");
         }
     }
 }

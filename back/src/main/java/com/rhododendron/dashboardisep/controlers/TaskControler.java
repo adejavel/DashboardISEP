@@ -103,4 +103,65 @@ public class TaskControler {
         }
 
     }
+    @CrossOrigin(origins = "*")
+    @PutMapping(path="/modify/{id}")
+    public @ResponseBody Task changeTask(@RequestBody Task task,@PathVariable(value = "id") String id) {
+        try {
+            Task original = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            original.setName(task.getName());
+            original.setStart_date(task.getStart_date());
+            original.setEnd_date(task.getEnd_date());
+            original.setDescription(task.getDescription());
+            taskRepository.save(original);
+            return task;
+        }
+        catch (Exception e){
+            throw new RuntimeException("task not found");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/markAsDone/{id}")
+    public @ResponseBody Task markAsDone(@PathVariable(value = "id") String id) {
+        try {
+            Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            task.setDone(true);
+            taskRepository.save(task);
+            return task;
+        }
+        catch (Exception e){
+            throw new RuntimeException("task not found");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/markAsNotDone/{id}")
+    public @ResponseBody Task markAsNotDone(@PathVariable(value = "id") String id) {
+        try {
+            Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            task.setDone(false);
+            taskRepository.save(task);
+            return task;
+        }
+        catch (Exception e){
+            throw new RuntimeException("task not found");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/associateToPhase/{id}")
+    public @ResponseBody Task changePhase(@PathVariable(value = "id") String id) {
+        try {
+            Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            Phase phase = task.getPhase();
+            Phase newPhase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            phase.removeTask(task);
+            newPhase.addTask(task);
+            task.setPhase(newPhase);
+            taskRepository.save(task);
+            phaseRepository.save(phase);
+            phaseRepository.save(newPhase);
+            return task;
+        }
+        catch (Exception e){
+            throw new RuntimeException("task not found");
+        }
+    }
 }

@@ -65,5 +65,50 @@ public class PhaseControler {
             throw new RuntimeException("phase not found");
         }
     }
+    @CrossOrigin(origins = "*")
+    @PutMapping(path="/modify/{id}")
+    public @ResponseBody Phase changePhase(@RequestBody Phase phase,@PathVariable(value = "id") String id) {
+        try {
+            Phase original = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            original.setName(phase.getName());
+            original.setDescription(phase.getDescription());
+            original.setStart_date(phase.getStart_date());
+            original.setEnd_date(phase.getEnd_date());
+            phaseRepository.save(original);
+            return phase;
+        }
+        catch (Exception e){
+            throw new RuntimeException("phase not found");
+        }
+    }
+    /*
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/markAsDone/{id}")
+    public @ResponseBody Phase markAsDone(@PathVariable(value = "id") String id) {
+        try {
+            Phase phase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            phase.setDone(true);
+            phaseRepository.save(phase);
+            return task;
+        }
+        catch (Exception e){
+            throw new RuntimeException("phase not found");
+        }
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/markAsNotDone/{id}")
+    public @ResponseBody Phase markAsNotDone(@PathVariable(value = "id") String id) {
+        try {
+            Phase phase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id)));
+            phase.setDone(false);
+            phaseRepository.save(phase);
+            return task;
+        }
+        catch (Exception e){
+            throw new RuntimeException("phase not found");
+        }
+    }
+    */
 
 }

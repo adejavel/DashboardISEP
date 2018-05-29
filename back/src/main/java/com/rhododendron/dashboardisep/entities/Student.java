@@ -86,6 +86,10 @@ public class Student {
         this.istutorof = istutorof;
     }
 
+    public void removeGroupFromTutor(StudentGroup group){
+        this.istutorof.remove(group);
+    }
+
     public String getLastname() {
         return lastname;
     }

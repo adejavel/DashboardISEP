@@ -62,6 +62,20 @@ public class GroupControler {
     }
 
     @CrossOrigin(origins = "*")
+    @GetMapping(path="/removeStudentFromGroup/{id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
+    public @ResponseBody Student removeStudentFromGroup(@PathVariable(value="id") String id) {
+        try {
+            Student st = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            st.setGroup(null);
+            studentRepository.save(st);
+            return st;
+        }
+        catch (Exception e){
+            throw new RuntimeException("student not found");
+        }
+    }
+
+    @CrossOrigin(origins = "*")
     @GetMapping(path="/getStudents/{group_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Map<String, Object> getStudentsByGroup(@PathVariable(value="group_id") String id) {
         try {
@@ -109,6 +123,19 @@ public class GroupControler {
             Map map = new HashMap();
             map.put("status",true);
             return map;
+        }
+        catch (Exception e){
+            throw new RuntimeException("group not found");
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @PutMapping(path="/modify/{id}")
+    public @ResponseBody StudentGroup changeGroup(@RequestBody StudentGroup group,@PathVariable(value = "id") String id) {
+        try {
+            StudentGroup original = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+            original.setName(group.getName());
+            groupRepository.save(original);
+            return original;
         }
         catch (Exception e){
             throw new RuntimeException("group not found");
