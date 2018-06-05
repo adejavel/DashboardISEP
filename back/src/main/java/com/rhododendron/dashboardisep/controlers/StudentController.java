@@ -10,7 +10,13 @@ import java.util.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.core.context.SecurityContextHolder;
 import java.lang.*;
-
+import it.ozimov.springboot.mail.model.Email;
+import javax.mail.internet.InternetAddress;
+import static com.google.common.collect.Lists.newArrayList;
+import it.ozimov.springboot.mail.model.defaultimpl.DefaultEmail;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+import java.time.*;
 
 @RequestMapping(path="/users")
 @RestController
@@ -23,10 +29,43 @@ public class StudentController {
     private PhaseRepository phaseRepository;
     @Autowired
     private TaskRepository taskRepository;
+    @Autowired
+    private it.ozimov.springboot.mail.service.EmailService emailService;
+    private ThreadPoolTaskScheduler taskScheduler;
+
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public StudentController(BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public StudentController(BCryptPasswordEncoder bCryptPasswordEncoder,ThreadPoolTaskScheduler sch) {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.taskScheduler = sch;
+    }
+
+    /*
+    @Autowired
+    public StudentController(TaskScheduler taskExecutor) {
+        this.executor = taskExecutor;
+    }*/
+
+
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path="/sendEmail",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public @ResponseBody Map<String, Object> sendEmail(@RequestBody Map<String, Object> map) {
+
+
+        try {
+            this.taskScheduler.schedule(
+                    new EmailTask("message!!!!","aymeric@dejavel.fr",this.emailService),
+                    new Date(System.currentTimeMillis() + 3000)
+            );
+            Map mapd = new HashMap();
+            mapd.put("status",false);
+            return mapd;
+
+        }
+        catch (Exception e){
+            throw new RuntimeException("error");
+        }
     }
 
 

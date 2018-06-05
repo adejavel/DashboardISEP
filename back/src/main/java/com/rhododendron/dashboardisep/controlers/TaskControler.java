@@ -7,6 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 import org.springframework.security.core.context.SecurityContextHolder;
+import it.ozimov.springboot.mail.model.Email;
+import javax.mail.internet.InternetAddress;
+import static com.google.common.collect.Lists.newArrayList;
+import it.ozimov.springboot.mail.model.defaultimpl.DefaultEmail;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import java.util.*;
 
 
@@ -19,17 +25,40 @@ public class TaskControler {
     private PhaseRepository phaseRepository;
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
+    private it.ozimov.springboot.mail.service.EmailService emailService;
+
+    private ThreadPoolTaskScheduler taskScheduler;
+
+
+    public TaskControler(ThreadPoolTaskScheduler sch) {
+        this.taskScheduler = sch;
+    }
 
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/add/{id}", produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Task addNewTask(@RequestBody Task task,@PathVariable(value = "id") String id) {
         try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
             Phase ph = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
             task.setPhase(ph);
             task.setDone(false);
             taskRepository.save(task);
             ph.addTask(task);
             phaseRepository.save(ph);
+            try {
+                long d = ((long)(task.getEnd_date()-60*5))*1000;
+                System.out.println(d);
+                System.out.println((task.getEnd_date()-60*5)*1000);
+                this.taskScheduler.schedule(
+                        new EmailTask("Hi!\n\nThis is DashboardISEP team and we sende you this email to remind you that task "+task.getName()+" is due for today.\n\nGoodbye",student.getEmail(),this.emailService),
+                        new Date(d)
+                );
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
             return task;
         }
         catch (Exception e){
