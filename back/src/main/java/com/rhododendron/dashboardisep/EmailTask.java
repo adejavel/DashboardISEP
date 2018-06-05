@@ -21,7 +21,7 @@ class EmailTask implements Runnable{
     public void run() {
         try {
             Email email = DefaultEmail.builder()
-                    .from(new InternetAddress("rhododendronandco@gmail.com", "coucou c'est moi"))
+                    .from(new InternetAddress("rhododendronandco@gmail.com", "DashboardISEP notification"))
                     .to(newArrayList(new InternetAddress(
                             this.email,this.email)))
                     .subject("Testing email")
