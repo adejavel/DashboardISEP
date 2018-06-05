@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
+import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.*;
 
 
@@ -65,10 +66,17 @@ public class GroupControler {
     @GetMapping(path="/removeStudentFromGroup/{id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Student removeStudentFromGroup(@PathVariable(value="id") String id) {
         try {
-            Student st = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            st.setGroup(null);
-            studentRepository.save(st);
-            return st;
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            if (student.getRole()>0){
+                Student st = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+                st.setGroup(null);
+                studentRepository.save(st);
+                return st;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
         }
         catch (Exception e){
             throw new RuntimeException("student not found");
@@ -115,14 +123,21 @@ public class GroupControler {
     public @ResponseBody Map<String, Object> deleteOneGroup(@PathVariable(value="id") String id) {
 
         try {
-            StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            group.getPhases().forEach(item->{
-                item.setGroup(null);
-            });
-            groupRepository.delete(group);
-            Map map = new HashMap();
-            map.put("status",true);
-            return map;
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            if (student.getRole()>0){
+                StudentGroup group = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+                group.getPhases().forEach(item->{
+                    item.setGroup(null);
+                });
+                groupRepository.delete(group);
+                Map map = new HashMap();
+                map.put("status",true);
+                return map;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
         }
         catch (Exception e){
             throw new RuntimeException("group not found");
@@ -132,10 +147,18 @@ public class GroupControler {
     @PutMapping(path="/modify/{id}")
     public @ResponseBody StudentGroup changeGroup(@RequestBody StudentGroup group,@PathVariable(value = "id") String id) {
         try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+
             StudentGroup original = groupRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            original.setName(group.getName());
-            groupRepository.save(original);
-            return original;
+            if (student.getRole()>0|| student.getGroup()==group){
+                original.setName(group.getName());
+                groupRepository.save(original);
+                return original;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
         }
         catch (Exception e){
             throw new RuntimeException("group not found");

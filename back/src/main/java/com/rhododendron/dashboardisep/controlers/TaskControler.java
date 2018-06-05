@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
+import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.*;
 
 
@@ -113,7 +114,7 @@ public class TaskControler {
             original.setEnd_date(task.getEnd_date());
             original.setDescription(task.getDescription());
             taskRepository.save(original);
-            return task;
+            return original;
         }
         catch (Exception e){
             throw new RuntimeException("task not found");
@@ -123,10 +124,18 @@ public class TaskControler {
     @GetMapping(path = "/markAsDone/{id}")
     public @ResponseBody Task markAsDone(@PathVariable(value = "id") String id) {
         try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
             Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            task.setDone(true);
-            taskRepository.save(task);
-            return task;
+            if (student.getRole()>0|| student.getGroup()==task.getPhase().getGroup()){
+                task.setDone(true);
+                taskRepository.save(task);
+                return task;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
+
         }
         catch (Exception e){
             throw new RuntimeException("task not found");
@@ -136,32 +145,48 @@ public class TaskControler {
     @GetMapping(path = "/markAsNotDone/{id}")
     public @ResponseBody Task markAsNotDone(@PathVariable(value = "id") String id) {
         try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
             Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            task.setDone(false);
-            taskRepository.save(task);
-            return task;
+            if (student.getRole()>0|| student.getGroup()==task.getPhase().getGroup()){
+                task.setDone(false);
+                taskRepository.save(task);
+                return task;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
+
         }
         catch (Exception e){
             throw new RuntimeException("task not found");
         }
     }
+    /*
     @CrossOrigin(origins = "*")
-    @GetMapping(path = "/associateToPhase/{id}")
+    @PutMapping(path = "/change/{id}")
     public @ResponseBody Task changePhase(@PathVariable(value = "id") String id) {
         try {
+            Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
             Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
             Phase phase = task.getPhase();
-            Phase newPhase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            phase.removeTask(task);
-            newPhase.addTask(task);
-            task.setPhase(newPhase);
-            taskRepository.save(task);
-            phaseRepository.save(phase);
-            phaseRepository.save(newPhase);
-            return task;
+            if (student.getRole()>0|| student.getGroup()==phase.getGroup()){
+                Phase newPhase = phaseRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+                phase.removeTask(task);
+                newPhase.addTask(task);
+                task.setPhase(newPhase);
+                taskRepository.save(task);
+                phaseRepository.save(phase);
+                phaseRepository.save(newPhase);
+                return task;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
         }
         catch (Exception e){
             throw new RuntimeException("task not found");
         }
-    }
+    }*/
 }

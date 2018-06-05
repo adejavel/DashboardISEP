@@ -143,18 +143,25 @@ public class StudentController {
     @PostMapping(path="/associateGroupToTutor/{tutor_id}",produces = {MediaType.APPLICATION_JSON_VALUE}) // Map ONLY GET Requests
     public @ResponseBody Student associateGroupToTutor(@RequestBody Map<String, Object> payload,@PathVariable(value="tutor_id") String id) {
         try {
-            Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            int groupId = (Integer)payload.get("groupId");
-            StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
-            if (group.getTutor()!=null){
-                Student tutor = group.getTutor();
-                tutor.removeGroupFromTutor(group);
+            Student st = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            if (st.getRole()>0){
+                Student user = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
+                int groupId = (Integer)payload.get("groupId");
+                StudentGroup group = groupRepository.findById(Long.valueOf(groupId)).get();
+                if (group.getTutor()!=null){
+                    Student tutor = group.getTutor();
+                    tutor.removeGroupFromTutor(group);
+                }
+                user.makeTutor(group);
+                studentRepository.save(user);
+                group.setTutor(user);
+                groupRepository.save(group);
+                return user;
+            }else {
+                throw new RuntimeException("not authorized");
             }
-            user.makeTutor(group);
-            studentRepository.save(user);
-            group.setTutor(user);
-            groupRepository.save(group);
-            return user;
+
         }
         catch (Exception e){
             throw new RuntimeException("failed to link group and tutor");
@@ -166,13 +173,20 @@ public class StudentController {
     public @ResponseBody Map<String, Object> deleteOneUser(@PathVariable(value="id") String id) {
         try {
             Student student = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
-            student.getIstutorof().forEach(item->{
-                item.setTutor(null);
-            });
-            studentRepository.delete(student);
-            Map map = new HashMap();
-            map.put("status",true);
-            return map;
+            Student st = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal().toString());
+            if (st.getRole()>student.getRole()){
+                student.getIstutorof().forEach(item->{
+                    item.setTutor(null);
+                });
+                studentRepository.delete(student);
+                Map map = new HashMap();
+                map.put("status",true);
+                return map;
+            }else {
+                throw new RuntimeException("not authorized");
+            }
+
         }
         catch (Exception e){
             throw new RuntimeException("user not found");
@@ -199,7 +213,7 @@ public class StudentController {
     @CrossOrigin(origins = "*")
     @PutMapping(path="/modify")
     public @ResponseBody Student changeStudent(@RequestBody Map<String, Object> payload) {
-        //try {
+        try {
             Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal().toString());
             System.out.println(student.getName());
@@ -207,11 +221,10 @@ public class StudentController {
             student.setLastname((String)payload.get("lastname"));
             studentRepository.save(student);
             return student;
-        /*
         }
         catch (Exception e){
             throw new RuntimeException("student not found");
-        }*/
+        }
     }
     @CrossOrigin(origins = "*")
     @PutMapping(path="/changePassword")
