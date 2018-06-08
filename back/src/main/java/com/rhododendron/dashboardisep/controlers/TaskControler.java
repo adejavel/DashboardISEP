@@ -48,9 +48,15 @@ public class TaskControler {
             ph.addTask(task);
             phaseRepository.save(ph);
             try {
-                long d = ((long)(task.getEnd_date()-60*task.getTime()))*1000;
-                System.out.println(d);
-                System.out.println((task.getEnd_date()-60*task.getTime())*1000);
+                try {
+                    long d = ((long)(task.getEnd_date()-60*task.getTime()))*1000;
+                }
+                catch (Exception e){
+                    long d = ((long)(task.getEnd_date()-60*60))*1000;
+                }
+                //long d = ((long)(task.getEnd_date()-60*task.getTime()))*1000;
+                //System.out.println(d);
+                //System.out.println((task.getEnd_date()-60*task.getTime())*1000);
                 this.taskScheduler.schedule(
                         new EmailTask("Hi!\n\nThis is DashboardISEP team and we sende you this email to remind you that task "+task.getName()+" is due for today.\n\nGoodbye",student.getEmail(),this.emailService),
                         new Date(d)
