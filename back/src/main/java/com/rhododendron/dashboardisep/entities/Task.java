@@ -21,6 +21,8 @@ public class Task {
 
     private boolean done;
 
+    private long time;
+
     @ManyToOne
     @JoinColumn(name="phase_id")
     private Phase phase;
@@ -99,5 +101,13 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 }

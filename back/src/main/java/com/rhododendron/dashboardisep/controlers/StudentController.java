@@ -74,7 +74,7 @@ public class StudentController {
     public @ResponseBody Student addNewUser(@RequestBody Student student) {
         try {
             Student registrar = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
-                    .getPrincipal().toString()).setPassword(null);
+                    .getPrincipal().toString());
             if (registrar.getRole()<student.getRole()){
                 student.setRole(0);
             }
