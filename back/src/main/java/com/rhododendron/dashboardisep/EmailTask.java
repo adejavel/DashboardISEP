@@ -24,7 +24,7 @@ class EmailTask implements Runnable{
                     .from(new InternetAddress("rhododendronandco@gmail.com", "DashboardISEP notification"))
                     .to(newArrayList(new InternetAddress(
                             this.email,this.email)))
-                    .subject("Testing email")
+                    .subject("Une tache est due prochainement")
                     .body(this.message)
                     .encoding("UTF-8").build();
             this.emailService.send(email);
