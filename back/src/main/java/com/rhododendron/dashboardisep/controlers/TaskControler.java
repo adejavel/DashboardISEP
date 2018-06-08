@@ -48,11 +48,12 @@ public class TaskControler {
             ph.addTask(task);
             phaseRepository.save(ph);
             try {
+                long d;
                 try {
-                    long d = ((long)(task.getEnd_date()-60*task.getTime()))*1000;
+                    d = ((long)(task.getEnd_date()-60*task.getTime()))*1000;
                 }
                 catch (Exception e){
-                    long d = ((long)(task.getEnd_date()-60*60))*1000;
+                    d = ((long)(task.getEnd_date()-60*60))*1000;
                 }
                 //long d = ((long)(task.getEnd_date()-60*task.getTime()))*1000;
                 //System.out.println(d);
