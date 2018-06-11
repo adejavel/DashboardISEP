@@ -8,7 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import it.ozimov.springboot.mail.configuration.EnableEmailTools;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
+
+@EnableWebMvc
 @EnableScheduling
 @EnableEmailTools
 @SpringBootApplication
@@ -27,6 +33,19 @@ public class DashboardisepApplication {
 		threadPoolTaskScheduler.setThreadNamePrefix(
 				"ThreadPoolTaskScheduler");
 		return threadPoolTaskScheduler;
+	}
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurerAdapter() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**")
+						.allowedOrigins("*")
+						.allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD","OPTIONS")
+						.allowedHeaders("*")
+						.allowCredentials(true);
+			}
+		};
 	}
 
 	public static void main(String[] args) {

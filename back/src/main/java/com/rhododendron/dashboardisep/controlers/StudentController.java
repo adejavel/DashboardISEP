@@ -157,7 +157,7 @@ public class StudentController {
 
         studentRepository.findAll().forEach((item)->{
             try {
-                if (item.getRole()<=student.getRole()){
+                if (item.getRole()<=student.getRole() || item.getRole()<=1){
                     students.add(item);
                 }
             }
