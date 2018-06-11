@@ -141,7 +141,7 @@ public class TaskControler {
 
     }
     @CrossOrigin(origins = "*")
-    @PutMapping(path="/modify/{id}")
+    @PostMapping(path="/modify/{id}")
     public @ResponseBody Task changeTask(@RequestBody Task task,@PathVariable(value = "id") String id) {
         try {
             Task original = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
