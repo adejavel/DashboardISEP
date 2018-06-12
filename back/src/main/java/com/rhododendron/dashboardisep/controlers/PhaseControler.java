@@ -58,7 +58,7 @@ public class PhaseControler {
     }
 
     @CrossOrigin(origins = "*")
-    @DeleteMapping(path="/one/{id}")
+    @PostMapping(path="/deleteOne/{id}")
     public @ResponseBody Map<String, Object> deleteOnePhase(@PathVariable(value="id") String id) {
         try {
             Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
@@ -82,7 +82,7 @@ public class PhaseControler {
         }
     }
     @CrossOrigin(origins = "*")
-    @PutMapping(path="/modify/{id}")
+    @PostMapping(path="/modify/{id}")
     public @ResponseBody Phase changePhase(@RequestBody Phase phase,@PathVariable(value = "id") String id) {
         try {
             Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()

@@ -91,7 +91,7 @@ public class TaskControler {
     }
 
     @CrossOrigin(origins = "*")
-    @DeleteMapping(path="/removeStudentFromTask/{id}")
+    @PostMapping(path="/removeStudentFromTask/{id}")
     public @ResponseBody Task removeStudentFromTask(@RequestBody Map<String, Object> map,@PathVariable(value="id") String id) {
         try {
             Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
@@ -123,7 +123,7 @@ public class TaskControler {
 
     }
     @CrossOrigin(origins = "*")
-    @DeleteMapping(path="/one/{id}")
+    @PostMapping(path="/deleteOne/{id}")
     public @ResponseBody Map<String, Object> deleteOneTask(@PathVariable(value="id") String id) {
         try {
             Task task = taskRepository.findById(Long.valueOf(Integer.parseInt(id))).get();

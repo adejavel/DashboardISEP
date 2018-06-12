@@ -208,7 +208,7 @@ public class StudentController {
 
     }
     @CrossOrigin(origins = "*")
-    @DeleteMapping(path="/one/{id}")
+    @PostMapping(path="/deleteOne/{id}")
     public @ResponseBody Map<String, Object> deleteOneUser(@PathVariable(value="id") String id) {
         try {
             Student student = studentRepository.findById(Long.valueOf(Integer.parseInt(id))).get();
@@ -250,7 +250,7 @@ public class StudentController {
         }
     }
     @CrossOrigin(origins = "*")
-    @PutMapping(path="/modify")
+    @PostMapping(path="/modify")
     public @ResponseBody Student changeStudent(@RequestBody Map<String, Object> payload) {
         try {
             Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
@@ -266,7 +266,7 @@ public class StudentController {
         }
     }
     @CrossOrigin(origins = "*")
-    @PutMapping(path="/changePassword")
+    @PostMapping(path="/changePassword")
     public @ResponseBody Map<String, Object> changePassword(@RequestBody Map<String, Object> payload) {
         try {
             String password = (String)payload.get("password");

@@ -119,7 +119,7 @@ public class GroupControler {
     }
 
     @CrossOrigin(origins = "*")
-    @DeleteMapping(path="/one/{id}")
+    @PostMapping(path="/deleteOne/{id}")
     public @ResponseBody Map<String, Object> deleteOneGroup(@PathVariable(value="id") String id) {
 
         try {
@@ -144,7 +144,7 @@ public class GroupControler {
         }
     }
     @CrossOrigin(origins = "*")
-    @PutMapping(path="/modify/{id}")
+    @PostMapping(path="/modify/{id}")
     public @ResponseBody StudentGroup changeGroup(@RequestBody StudentGroup group,@PathVariable(value = "id") String id) {
         try {
             Student student = studentRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication()
