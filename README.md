@@ -1,8 +1,9 @@
 # Dashboard'ISEP
+Web application for school projects management
 
 ## Intro
 
-This project is a web platform which main purpose is to facilitate student and teachers interaction enabling students working on different projects to easily exchange with their tutor. The platform aim to facilitate students organization as well, providing a phase and task management.
+This project is a web platform which main purpose is to facilitate student and teachers interaction enabling students working on different projects to easily exchange with their tutor. The platform aims to facilitate students organization as well, providing a phase and task management.
 
 This project is a school project to learn web technologies.
 
